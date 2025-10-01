@@ -1,17 +1,28 @@
 <script setup lang="ts">
-import Canvas from "./components/Canvas.vue";
+import { Canvas } from "./components/Canvas";
+import { Topbar } from "./components/Topbar";
 </script>
 
 <template>
   <div class="app-container">
-    <Canvas />
+    <Topbar />
+    <div class="canvas-wrapper">
+      <Canvas />
+    </div>
   </div>
 </template>
 
 <style scoped>
 .app-container {
+  position: relative;
   box-sizing: border-box;
   height: 100%;
-  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
 }
 </style>
